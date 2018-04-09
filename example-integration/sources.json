@@ -1,0 +1,43 @@
+{
+    "settings": {
+        "mqtt": {
+          "broker": "mqtt://test.mosquitto.org"
+        }
+    },
+    "sources": [
+        {
+            "id": "machine1",
+            "publish_interval": 500,
+            "mode": "http",
+            "fields": [
+              {
+                  "name": "timestamp",
+                  "generator": "currentTimestamp",
+                  "parameters": []
+              },
+                {
+                    "name": "temperature",
+                    "generator": "integerRange",
+                    "parameters": [15,30]
+                }
+            ]
+        },
+        {
+            "id": "machine2",
+            "publish_interval": 500,
+            "mode": "http",
+            "fields": [
+                {
+                  "name": "timestamp",
+                  "generator": "currentTimestamp",
+                  "parameters": []
+                },
+                {
+                  "name": "speed",
+                  "generator": "integerRange",
+                  "parameters": [50,100]
+                }
+            ]
+        }
+    ]
+}

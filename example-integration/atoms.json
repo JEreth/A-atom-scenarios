@@ -1,0 +1,30 @@
+{
+    "settings": {
+      "debug": true
+    },
+    "atoms": [
+        {
+            "id": "myIntegrator",
+            "input": [
+              {
+                "mode": "http",
+                "url": "http://sources:8000/machine1",
+                "pullIntervall": "800"
+              },
+              {
+                "mode": "http",
+                "url": "http://sources:8000/machine2",
+                "pullIntervall": "800"
+              }
+            ],
+            "output": [
+              {
+                "mode": "http",
+                "route": "machinepark"
+              }
+            ],
+            "augmentation": [
+            ]
+        }
+    ]
+}

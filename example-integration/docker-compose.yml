@@ -1,0 +1,14 @@
+version: '3'
+services:
+  sources:
+    image: "julianereth/a-atom-generator"
+    volumes:
+       - ${PWD}/sources.json:/usr/src/app/config.json
+    ports:
+       - "8000:8000"
+  atoms:
+    image: "julianereth/a-atom-nodejs"
+    volumes:
+       - ${PWD}/atoms.json:/usr/src/app/config.json
+    ports:
+       - "8100:8100"
